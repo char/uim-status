@@ -12,7 +12,7 @@ int main(void) {
     int uim_fd = uim_helper_init_client_fd(&exit_uim_status);
     uim_helper_send_message(uim_fd, "im_list_get\n");
 
-    while (1) {
+    for (;;) {
         uim_helper_read_proc(uim_fd);
         char *msg = uim_helper_get_message();
 
