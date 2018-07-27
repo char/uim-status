@@ -21,7 +21,7 @@ char* get_uim_helper_response(int uim_fd) {
 
 int main(void) {
     int uim_fd = uim_helper_init_client_fd(&exit_uim_status);
-    
+
     uim_helper_send_message(uim_fd, "prop_list_get\n");
     char* msg = get_uim_helper_response(uim_fd);
     puts(msg);
@@ -30,4 +30,3 @@ int main(void) {
     uim_helper_close_client_fd(uim_fd);
     return 0;
 }
-
