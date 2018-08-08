@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <sched.h>
 
 void exit_uim_status(void) {
     exit(1);
@@ -16,6 +17,8 @@ char* get_uim_helper_response(int uim_fd) {
         if (msg != NULL) {
             return msg;
         }
+
+        sched_yield();
     }
 }
 
